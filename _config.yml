@@ -1,5 +1,13 @@
-title: Cayman theme
-description: Cayman is a clean, responsive theme for GitHub Pages.
-show_downloads: true
+exclude: README.md
+timezone: Europe/Rome
+encoding: utf-8
+
+title: WebGIS GdL SISTEC
+description: <descrizione>
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-cayman
+
+github:
+  is_project_page: true
+  is_user_page: false
