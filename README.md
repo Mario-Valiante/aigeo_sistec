@@ -1,2 +1,2 @@
-# aigeo_sistec
-WebGIS del gruppo di lavoro AIGeo "Sistemi e tecnologie integrate per l’analisi morfotettonica" (SISTECT)
+# AIGeo SISTEC
+Versione prototipale del WebGIS del gruppo di lavoro AIGeo "Sistemi e tecnologie integrate per l’analisi morfotettonica" (SISTECT)
