@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/MarkerCluster.css">
         <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="css/leaflet-search.css">
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
@@ -42,6 +43,7 @@
         <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
         <script src="js/leaflet-measure.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
+        <script src="js/leaflet-search.js"></script>
         <script src="data/PapersAOI_1.js"></script>
         <script>
         var highlightLayer;
@@ -219,6 +221,10 @@
                         <th scope="row">Keyword #7</th>\
                         <td class="visible-with-data" id="Keyword7">' + (feature.properties['Keyword7'] !== null ? autolinker.link(String(feature.properties['Keyword7']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
+                    <tr>\
+                        <th scope="row">Language</th>\
+                        <td class="visible-with-data" id="Lingua">' + (feature.properties['Lingua'] !== null ? autolinker.link(String(feature.properties['Lingua']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
@@ -291,6 +297,13 @@
         });
         lay.addTo(map);
         setBounds();
+        map.addControl(new L.Control.Search({
+            layer: cluster_PapersAOI_1,
+            initial: false,
+            hideMarkerOnCollapse: true,
+            propertyName: 'Titolo'}));
+        document.getElementsByClassName('search-button')[0].className +=
+         ' fa fa-binoculars';
         </script>
     </body>
 </html>
